@@ -1,0 +1,40 @@
+name: raw_trades
+version: 1
+description: "Raw trade events from the sjarvis order execution system"
+fields:
+  - name: trade_id
+    type: string
+    nullable: false
+    description: "Unique trade identifier (UUID)"
+  - name: symbol
+    type: string
+    nullable: false
+    description: "Instrument symbol e.g. NSE:NIFTY 50"
+  - name: side
+    type: string
+    nullable: false
+    description: "BUY or SELL"
+  - name: quantity
+    type: integer
+    nullable: false
+    description: "Number of units traded"
+  - name: price
+    type: float
+    nullable: false
+    description: "Execution price"
+  - name: currency
+    type: string
+    nullable: false
+    description: "ISO 4217 currency code e.g. INR"
+  - name: traded_at
+    type: timestamp
+    nullable: false
+    description: "UTC timestamp of execution"
+  - name: strategy_id
+    type: string
+    nullable: true
+    description: "Strategy that generated the order, nullable for manual trades"
+  - name: _load_id
+    type: string
+    nullable: false
+    description: "Idempotency key for load deduplication"

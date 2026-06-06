@@ -1,0 +1,35 @@
+name: risk_signals
+version: 1
+description: "Per-position risk signals published by the sjarvis risk engine"
+fields:
+  - name: signal_id
+    type: string
+    nullable: false
+    description: "Unique signal ID"
+  - name: portfolio_id
+    type: string
+    nullable: false
+  - name: symbol
+    type: string
+    nullable: false
+  - name: signal_type
+    type: string
+    nullable: false
+    description: "DRAWDOWN_BREACH, CONCENTRATION_LIMIT, VAR_BREACH, STOP_LOSS"
+  - name: severity
+    type: string
+    nullable: false
+    description: "LOW, MEDIUM, HIGH, CRITICAL"
+  - name: current_value
+    type: float
+    nullable: false
+  - name: threshold_value
+    type: float
+    nullable: false
+  - name: emitted_at
+    type: timestamp
+    nullable: false
+  - name: acknowledged
+    type: boolean
+    nullable: false
+    description: "Whether the risk desk has acknowledged this signal"

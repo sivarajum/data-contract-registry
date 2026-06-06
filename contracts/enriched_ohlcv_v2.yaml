@@ -1,0 +1,46 @@
+name: enriched_ohlcv
+version: 2
+description: "OHLCV bars enriched with technical indicators for sjarvis feature engineering"
+fields:
+  - name: symbol
+    type: string
+    nullable: false
+    description: "Instrument symbol"
+  - name: bar_time
+    type: timestamp
+    nullable: false
+    description: "Bar open time UTC"
+  - name: open
+    type: float
+    nullable: false
+  - name: high
+    type: float
+    nullable: false
+  - name: low
+    type: float
+    nullable: false
+  - name: close
+    type: float
+    nullable: false
+  - name: volume
+    type: integer
+    nullable: false
+  - name: vwap
+    type: float
+    nullable: true
+    description: "Volume-weighted average price, nullable for low-volume bars"
+  - name: rsi_14
+    type: float
+    nullable: true
+    description: "14-period RSI, nullable for first 14 bars"
+  - name: ema_21
+    type: float
+    nullable: true
+    description: "21-period EMA"
+  - name: regime
+    type: string
+    nullable: true
+    description: "Market regime classification: TRENDING, RANGING, VOLATILE"
+  - name: _load_id
+    type: string
+    nullable: false
